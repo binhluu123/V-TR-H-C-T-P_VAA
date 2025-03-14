@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện tài liệu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+        }
+        .hidden { display: none; }
+/* Thêm CSS riêng */
+        .mon-hoc {
+            color: white; /* Màu chữ */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Hiệu ứng đổ bóng */
+            font-weight: bold;
+        }
+
+        .mon-hoc:hover {
+            color: yellow; /* Khi di chuột vào chữ sẽ đổi màu */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md p-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <img src="F:\WEB học tập VAA\Ảnh\logo.png" alt="Logo" class="h-10">
+            <h1 class="text-xl font-bold text-blue-600">VŨ TRỤ HỌC TẬP-VAA</h1>
+        </div>
+        <input type="text" placeholder="🔍 Tìm kiếm lớp, tài liệu, video..." class="w-1/3 p-2 border rounded-lg shadow-sm">
+        <img src="F:\WEB học tập VAA\Ảnh\logotruongvaa.png" alt="Logo Trường" class="h-10">
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <nav class="w-1/5 bg-white shadow-lg h-screen p-4">
+            <ul class="space-y-4">
+                <li class="p-3 rounded-lg hover:bg-blue-100 cursor-pointer" onclick="showSection('home')">🏠 Trang chủ</li>
+                <li class="p-3 rounded-lg hover:bg-blue-100 cursor-pointer" onclick="showSection('vaa')">📚 Tài liệu học tập VAA</li>
+                <li class="p-3 rounded-lg hover:bg-blue-100 cursor-pointer" onclick="showSection('other')">📖 Tài liệu khác</li>
+                <li class="p-3 rounded-lg hover:bg-blue-100 cursor-pointer" onclick="showSection('videos')">🎥 Video học tập</li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="w-4/5 p-6">
+            <div id="home">
+                <h2 class="text-2xl font-semibold mb-4">📺 Video ôn thi</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <iframe class="w-full h-40" src="https://www.youtube.com/embed/example1"></iframe>
+                    <iframe class="w-full h-40" src="https://www.youtube.com/embed/example2"></iframe>
+                </div>
+                <h2 class="text-2xl font-semibold mt-6 mb-4">📖 Các khóa học</h2>
+                <p>Danh sách các khóa học sẽ được cập nhật tại đây.</p>
+            </div>
+
+            <div id="vaa" class="hidden">
+                <h2 class="text-2xl font-semibold mb-4">📚 Tài liệu học tập VAA</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="https://drive.google.com/mon-toan" 
+   class="block bg-cover bg-center rounded-lg shadow-lg p-4 text-xl mon-hoc"
+   style="background-image: url('F:/WEB học tập VAA/Ảnh/toan.png'); height: 150px;">
+   Môn Toán
+</a>
+
+<a href="https://drive.google.com/mon-ly" 
+   class="block bg-cover bg-center rounded-lg shadow-lg p-4 text-xl mon-hoc"
+   style="background-image: url('F:/WEB học tập VAA/Ảnh/ly.png'); height: 150px;">
+   Môn Lý
+</a>
+
+    </div>
+</div>
+            <div id="other" class="hidden">
+                <h2 class="text-2xl font-semibold mb-4">📖 Tài liệu khác</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="https://drive.google.com/mon-toan" class="block bg-cover bg-center rounded-lg shadow-lg p-4 text-white text-xl font-bold"
+           style="background-image: url('F:/WEB học tập VAA/Ảnh/toan.jpg'); height: 150px;">
+            Môn Văn
+        </a>
+        <a href="https://drive.google.com/mon-ly" class="block bg-cover bg-center rounded-lg shadow-lg p-4 text-white text-xl font-bold"
+           style="background-image: url('F:/WEB học tập VAA/Ảnh/ly.jpg'); height: 150px;">
+            Môn Sử
+        </a>
+    </div>
+</div>
+
+            <div id="videos" class="hidden">
+                <h2 class="text-2xl font-semibold mb-4">🎥 Video học tập</h2>
+                <iframe class="w-full h-40" src="https://www.youtube.com/embed/example3"></iframe>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-4 mt-6">
+        © 2025 Thư viện tài liệu | Designed by ChatGPT
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('main > div').forEach(div => {
+                div.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
